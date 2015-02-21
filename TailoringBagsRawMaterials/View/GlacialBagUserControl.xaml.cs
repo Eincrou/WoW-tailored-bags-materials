@@ -40,9 +40,14 @@ namespace TailoringBagsRawMaterials.View
             TextBox satchelAmountInput = sender as TextBox;
             if (int.TryParse(glacialAmountInput.Text, out bagsAmount))
             {
-                satchelAmountInput.Background = new SolidColorBrush(Colors.White);
-                if (viewModel != null)
-                    viewModel.GlacialMaterials(bagsAmount);
+                if (bagsAmount <= 1000)
+                {
+                    satchelAmountInput.Background = new SolidColorBrush(Colors.White);
+                    if (viewModel != null)
+                        viewModel.GlacialMaterials(bagsAmount);
+                }
+                else
+                    satchelAmountInput.Background = new SolidColorBrush(Colors.LightYellow);
             }
             else
                 satchelAmountInput.Background = new SolidColorBrush(Colors.LightPink);

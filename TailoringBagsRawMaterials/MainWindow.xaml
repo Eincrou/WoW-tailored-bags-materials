@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TailoringBagsRawMaterials.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Tailoring Bags Raw Materials" Height="560" Width="700"
+        Title="Tailored Bags Materials Calculator" Height="560" Width="700"
         xmlns:view="clr-namespace:TailoringBagsRawMaterials.View">
     <Grid>
         <Grid.ColumnDefinitions>

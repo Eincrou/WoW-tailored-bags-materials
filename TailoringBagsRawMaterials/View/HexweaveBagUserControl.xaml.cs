@@ -38,9 +38,14 @@ namespace TailoringBagsRawMaterials.View
             TextBox hexweaveAmountInput = sender as TextBox;
             if (int.TryParse(hexweaveAmountInput.Text, out bagsAmount))
             {
-                hexweaveAmountInput.Background = new SolidColorBrush(Colors.White);
-                if (viewModel != null)
-                    viewModel.HexweaveMaterials(bagsAmount);
+                if (bagsAmount <= 1000)
+                {
+                    hexweaveAmountInput.Background = new SolidColorBrush(Colors.White);
+                    if (viewModel != null)
+                        viewModel.HexweaveMaterials(bagsAmount);
+                }
+                else
+                    hexweaveAmountInput.Background = new SolidColorBrush(Colors.LightYellow);
             }
             else
                 hexweaveAmountInput.Background = new SolidColorBrush(Colors.LightPink);
