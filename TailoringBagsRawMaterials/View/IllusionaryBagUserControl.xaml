@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="TailoringBagsRawMaterials.View.IllusionaryBagUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:viewmodel="clr-namespace:TailoringBagsRawMaterials.ViewModel">
+             
+    <UserControl.Resources>
+        <viewmodel:IllusionaryBagViewModel x:Key="viewModel"/>
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ResourceKey=viewModel}" Background="#FFE9EFFD">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="illusionaryBagIcon" Source="{Binding IllusionaryBagImage}" Width="30" Margin="5"/>
+                <TextBlock Text="{Binding IllusionaryBagName}" Margin="5,0" FontSize="20" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBox x:Name="illusionaryAmountInput" Text="1" Width="Auto" Margin="5,0" VerticalAlignment="Center" FontSize="16" TextChanged="illusionaryAmountInput_TextChanged"/>
+            </StackPanel>
+            <TextBlock Text="{Binding IllusionaryBagDescription}" HorizontalAlignment="Center" FontStyle="Italic" />
+            <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding IllusionaryEnchantedClothCount}" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Image x:Name="illusionaryEnchantedClothIcon" Source="{Binding IllusionaryEnchantedClothImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding IllusionaryEnchantedName}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding IllusionaryBoltCount}" Margin="5" FontSize="14" VerticalAlignment="Center"/>
+                    <Image x:Name="illusionaryBoltIcon" Source="{Binding IllusionaryBoltImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding IllusionaryBoltName, Mode=OneWay}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding IllusionaryClothCount}" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="illusionaryClothIcon" Source="{Binding IllusionaryClothImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding IllusionaryClothName}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="TailoringBagsRawMaterials.View.HexweaveBagUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:viewmodel="clr-namespace:TailoringBagsRawMaterials.ViewModel">
+    
+    <UserControl.Resources>
+        <viewmodel:HexweaveBagViewModel x:Key="viewModel"/>
+    </UserControl.Resources>
+    
+    <Grid DataContext="{StaticResource ResourceKey=viewModel}" Background="#FFEDFDE9">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image x:Name="hexweaveBagIcon" Source="{Binding HexBagImage}" Width="30" Margin="5"/>
+                <!--<Image Source="/Resources/inv_tailoring_hexweavebag.jpg" Width="30" Margin="5"/>-->
+                <TextBlock Text="{Binding HexBagName}" Margin="5,0" FontSize="20" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBox x:Name="hexweaveAmountInput" Text="1" Width="Auto" Margin="5,0" VerticalAlignment="Center" FontSize="16" TextChanged="hexweaveAmountInput_TextChanged"/>
+            </StackPanel>
+            <TextBlock Text="{Binding HexBagDescription}" HorizontalAlignment="Center" FontStyle="Italic" />
+            <Border BorderBrush="DarkGreen" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding HexBoltCount}" Margin="5" FontSize="14" VerticalAlignment="Center"/>
+                    <Image x:Name="hexweaveBoltIcon" Source="{Binding HexBoltImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="Hexweave Cloth" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="DarkGreen" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding HexClothCount}" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="hexweaveClothIcon" Source="{Binding HexClothImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="Sumptuous Fur" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

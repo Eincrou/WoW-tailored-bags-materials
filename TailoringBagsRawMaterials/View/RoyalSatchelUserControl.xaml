@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="TailoringBagsRawMaterials.View.RoyalSatchelUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:viewmodel="clr-namespace:TailoringBagsRawMaterials.ViewModel">
+    
+    <UserControl.Resources>
+        <viewmodel:RoyalSatchelViewModel x:Key="viewModel"/>
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ResourceKey=viewModel}" Background="#FFF8E9FD">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image x:Name="satchelBagIcon" Source="{Binding SatchelBagImage}" Width="30" Margin="5"/>
+                <TextBlock Text="{Binding SatchelBagName}" Margin="5,0" FontSize="20" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBox x:Name="satchelAmountInput" Text="1" Width="Auto" Margin="5,0" VerticalAlignment="Center" FontSize="16" TextChanged="satchelAmountInput_TextChanged"/>
+            </StackPanel>
+            <TextBlock Text="{Binding SatchelBagDescription}" HorizontalAlignment="Center" FontStyle="Italic" />
+            <Border BorderBrush="DarkViolet" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding SatchelEnchantedClothCount}" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="satchelEnchantedClothIcon" Source="{Binding SatchelEnchantedClothImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding SatchelEnchantedName}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="DarkViolet" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding SatchelBoltCount}" Margin="5" FontSize="14" VerticalAlignment="Center"/>
+                    <Image x:Name="satchelBoltIcon" Source="{Binding SatchelBoltImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding SatchelBoltName}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="DarkViolet" BorderThickness="2" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding SatchelClothCount}" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image x:Name="satchelClothIcon" Source="{Binding SatchelClothImage}" Margin="0,2" Width="30"/>
+                    <TextBlock Text="{Binding SatchelClothName}" Margin="5,0" FontSize="14" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
